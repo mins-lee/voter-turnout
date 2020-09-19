@@ -7,5 +7,5 @@
 pip install -r requirements.txt
 ```
 3. generate a [Census API key](https://api.census.gov/data/key_signup.html)
-4. update parameters in config.yaml and secrets.yaml
+4. update parameters in config.yaml and secrets_template.yaml
 5. run acsdata.py

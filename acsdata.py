@@ -14,16 +14,12 @@ from sqlalchemy import create_engine
 pd.set_option('display.expand_frame_repr', False)
 pd.set_option('display.precision', 2)
 
-# with open('/data/users/minseonl/variables.yaml', 'r') as f:
-#   # loads contents of variables.yaml into a python dictionary
-#   config = yaml.safe_load(f.read())
-
 with open('secrets.yaml', 'r') as f:
-  # loads contents of variables.yaml into a python dictionary
+  # loads contents of secrets.yaml into a python dictionary
   sec = yaml.safe_load(f.read())
 
 with open('config.yaml', 'r') as f:
-  # loads contents of variables.yaml into a python dictionary
+  # loads contents of config.yaml into a python dictionary
   config = yaml.safe_load(f.read())  
 
 state = config['acs']['state']
@@ -77,18 +73,6 @@ def cleanTable(state, year, key, tableIDs, variables):
     """Drop columns with table ID.""" 
     table = computeVar(state, year, key, tableIDs)
     return table[variables]
-
-# def loadTable(state, year, key, tableIDs, variables):
-#     """Load pandas dataframe into postgres db table."""
-#     username = config['db']['username']
-#     password = config['db']['password']
-#     host = config['db']['host']
-#     port = config['db']['port']
-#     database = config['db']['database']
-#     engine = create_engine('postgresql://' + username + ':' + password + '@' + 
-#             host + ':' + port + '/' + database)
-#     df = cleanTable(state, year, key, tableIDs, variables)
-#     return df.pg_copy_to('test', engine)
 
 def loadTable(state, year, key, tableIDs, variables):
     """Load pandas dataframe into postgres db table."""
