@@ -18,11 +18,11 @@ pd.set_option('display.precision', 2)
 #   # loads contents of variables.yaml into a python dictionary
 #   config = yaml.safe_load(f.read())
 
-with open('/data/users/minseonl/secretes.yaml', 'r') as f:
+with open('secrets.yaml', 'r') as f:
   # loads contents of variables.yaml into a python dictionary
   sec = yaml.safe_load(f.read())
 
-with open('/data/users/minseonl/acs/config.yaml', 'r') as f:
+with open('config.yaml', 'r') as f:
   # loads contents of variables.yaml into a python dictionary
   config = yaml.safe_load(f.read())  
 
