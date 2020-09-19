@@ -1,11 +1,3 @@
-#################################################
-# hw1.py
-#
-# Your name: Min Lee    
-# Your andrew id: minseonl
-
-#################################################
-
 import pandas as pd
 import censusdata
 import yaml
